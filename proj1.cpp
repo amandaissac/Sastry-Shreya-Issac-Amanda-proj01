@@ -131,21 +131,22 @@ string bitwise(int total,vector<int>v){
 		    if(fourth){
 		      //count+=1;
 		      //cout<<vec[0]<<" "<<vec[1]<<" "<<vec[2]<<" "<<vec[3]<<endl;
-		      fifth=true;
+		      ///*
 		      for(int h=0;h<5;h+=1){
+			fifth=true;
 			if((h==0)&&(vec[0]!=a)&&(vec[1]!=a)&&(vec[2]!=a)&&(vec[3]!=a)){
 			  vec[4]=a;
 			}
 			else if((h==1)&&(vec[0]!=b)&&(vec[1]!=b)&&(vec[2]!=b)&&(vec[3]!=b)){
 			  vec[4]=b;
 			}
-			else if((h==0)&&(vec[0]!=c)&&(vec[1]!=c)&&(vec[2]!=c)&&(vec[3]!=c)){
+			else if((h==2)&&(vec[0]!=c)&&(vec[1]!=c)&&(vec[2]!=c)&&(vec[3]!=c)){
 			  vec[4]=c;
 			}
-			else if((h==0)&&(vec[0]!=d)&&(vec[1]!=d)&&(vec[2]!=d)&&(vec[3]!=d)){
+			else if((h==3)&&(vec[0]!=d)&&(vec[1]!=d)&&(vec[2]!=d)&&(vec[3]!=d)){
 			  vec[4]=d;
 			}
-			else if((h==0)&&(vec[0]!=e)&&(vec[1]!=e)&&(vec[2]!=e)&&(vec[3]!=e)){
+			else if((h==4)&&(vec[0]!=e)&&(vec[1]!=e)&&(vec[2]!=e)&&(vec[3]!=e)){
 			  vec[4]=e;
 			}
 			else{
@@ -155,7 +156,8 @@ string bitwise(int total,vector<int>v){
 			  count+=1;
 			  cout<<vec[0]<<" "<<vec[1]<<" "<<vec[2]<<" "<<vec[3]<<" "<<vec[4]<<endl;
 			}
-		      }
+		      }//for h
+		      //*/
 		    }
 		  }//for for w
 		}
