@@ -17,6 +17,8 @@ bool fifth=true;
 int a,b,c,d,e;
 int count=0;
 bool noA,noB,noC,noD,noE;
+string ari;
+int op1,op2,op3,op4;
 vector<int>vec={-1,-1,-1,-1,-1};
 vector<vector<int>>all; //a vector holding vector memory
 void secondNum(int a,int b,int c,int d,int e,int third,int z);
@@ -172,14 +174,138 @@ string bitwise(int total,vector<int>v){
             }//if second
         }          
     }
+    //we have the all vector carrying all number combinations
+    for(int q=0;q<120;q+=1){
+      v=all[q]; //setting s as temperary vector at iteration 
+      //operand 1
+      for(int a1=0;a1<5;a1++){
+	//resetting
+	ari="";
+	op1=0;
+	op2=0;
+	op3=0;
+	op4=0;
+	if(a1==0){
+	  op1=v[0]+v[1];
+	  ari+="+";
+	}
+	if(a1==1){
+	  op1=v[0]-v[1];
+	  ari+="-";
+	}
+	if(a1==2){
+	  op1=v[0]*v[1];
+	  ari+="*";
+	}
+	if((a1==3)&&(v[1]!=0)){
+	  op1=v[0]/v[1];
+	  ari+="/";
+	}
+	if((a1==4)&&(v[1]!=0)){
+	  op1=v[0]%v[1];
+	  ari+="%";
+	}
+	//cout<<"Operand 1: "<<ari<<endl;
+	//got operand 1; Now to operand 2
+	for(int a2=0;a2<5;a2++){
+	  if(a2==0){
+	    op2=op1+v[2];
+	    ari+="+";
+	  }
+	  if(a2==1){
+	    op2=op1-v[2];
+	    ari+="-";
+	  }
+	  if(a2==2){
+	    op2=op1*v[2];
+	    ari+="*";
+	  }
+	  if((a2==3)&&(v[2]!=0)){
+	    op2=op1/v[2];
+	    ari+="/";
+	  }
+	  if((a2==4)&&(v[2]!=0)){
+	    op2=op1%v[2];
+	    ari+="%";
+	  }
+	  //cout<<"Operand 2: "<<ari<<endl;
+	  //got operand 2; Now to operand 3
+	  for(int a3=0;a3<5;a3++){
+	    if(a3==0){
+	      op3=op2+v[3];
+	      ari+="+";
+	    }
+	    if(a3==1){
+	      op3=op2-v[3];
+	      ari+="-";
+	    }
+	    if(a3==2){
+	      op3=op2*v[3];
+	      ari+="*";
+	    }
+	    if((a3==3)&&(v[3]!=0)){
+	      op3=op2/v[3];
+	      ari+="/";
+	    }
+	    if((a3==4)&&(v[3]!=0)){
+	      op3=op2%v[3];
+	      ari+="%";
+	    }
+	    //cout<<"Operand 3: "<<ari<<endl;
+	    //got operand 3; Now operand 4
+	    for(int a4=0;a4<5;a4++){
+	      if(a4==0){
+	      op4=op3+v[4];
+	      ari+="+";
+	      }
+	      if(a4==1){
+		op4=op3-v[4];
+		ari+="-";
+	      }
+	      if(a4==2){
+		op4=op3*v[4];
+		ari+="*";
+	      }
+	      if((a4==3)&&(v[4]!=0)){
+		op4=op3/v[4];
+		ari+="/";
+	      }
+	      if((a4==4)&&(v[4]!=0)){
+		op4=op3%v[4];
+		ari+="%";
+	      }
+	      //cout<<"Operand 4: "<<ari<<endl;
+	      //all 4 operands have been found
+	      if(op4==total){
+		count+=1;
+		if(count<10){
+		  //cout<<"Ari: "<<ari<<endl;
+		  cout<<"((("<<v[0]<<ari[0]<<v[1]<<")"<<ari[1]<<v[2]<<")"<<ari[2]<<v[3]<<")"<<ari[3]<<v[4]<<endl;
+		}
+	      }
+	    }//for a4
+	  }
+	}
+      }
+    }//for: iterating through "all"
+
+
+    
+    //checking if number combinations are correct
+    /*
     count=all.size(); //count is the size
     for(int q=0;q<count;q+=1){
         v=all[q]; //setting v as temperory vector at iteration q
         cout<<v[0]<<" "<<v[1]<<" "<<v[2]<<" "<<v[3]<<" "<<v[4]<<endl;
     }
-    
+    cout<<"Should be 120: "<<count<<endl;
+    */
+    //cout<<"Ari: "<<ari<<endl;
+    cout<<count<<" arithmetic expressions found that evaluate to "<<total<<endl;
     return "";
 }
+
+/*
 void secondNum(int a,int b,int c,int d,int e,int third, int z){
     third=true;
 //cout<<"This is Z: "<<z<<endl;
@@ -203,4 +329,4 @@ void secondNum(int a,int b,int c,int d,int e,int third, int z){
     }    
     return;
 }
-
+*/
