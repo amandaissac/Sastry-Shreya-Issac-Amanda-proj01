@@ -16,7 +16,8 @@ bool fifth=true;
 int a,b,c,d,e;
 int count=0;
 bool noA,noB,noC,noD,noE;
-vector<int>vec;
+vector<int>vec={-1,-1,-1,-1,-1};
+vector<vector<int>>all; //a vector holding vector memory
 string bitwise(int total,vector<int>v){
     a=v[0];
     b=v[1];
@@ -29,27 +30,28 @@ string bitwise(int total,vector<int>v){
         noC=true;
         noD=true;
         noE=true;
-        vec.clear();
+	//vec.clear();
+        vec={-1,-1,-1,-1,-1};
         if(x==0){
-            vec.push_back(a);
-            noA=false;
+	  vec[0]=a;
+	  noA=false;
         }
         if(x==1){
-            vec.push_back(b);
-            noB=false;
+	  vec[0]=b;
+	  noB=false;
         }
         if(x==2){
-            vec.push_back(c);
-            noC=false;
+	  vec[0]=c;
+	  noC=false;
             
         }
         if(x==3){
-            vec.push_back(d);
-            noD=false;
+	  vec[0]=d;
+	  noD=false;
         }
         if(x==4){
-            vec.push_back(e);
-            noE=false;
+	  vec[0]=e;
+	  noE=false;
         }
         //cout<<vec[0]<<endl;
         //figuring out second space
@@ -153,8 +155,7 @@ string bitwise(int total,vector<int>v){
 			  fifth=false;
 			}
 			if(fifth){
-			  count+=1;
-			  cout<<vec[0]<<" "<<vec[1]<<" "<<vec[2]<<" "<<vec[3]<<" "<<vec[4]<<endl;
+			  all.push_back(vec);
 			}
 		      }//for h
 		      //*/
@@ -165,56 +166,11 @@ string bitwise(int total,vector<int>v){
 	    }//if second
         }          
     }
-/*
-    string expression="";
-    int comboCount=0;
-    int counta=0,countb=1,countc=2,countd=3,counte=4;
-    vector<string> bitOps;
-    bitOps.push_back("<<");
-    bitOps.push_back(">>");
-    bitOps.push_back("&");
-    bitOps.push_back("|");
-    bitOps.push_back("^");
-    
-    for(int a=0;a<5;a++){//first number
-        if(counta==4){
-            counta=0;
-        }
-        counta++;
-        for(int b=0;b<5;b++){
-            if(countb==4){
-                countb=0;
-            }
-            countb++;
-            for(int c=0;c<5;c++){
-                 if(countc==4){
-                     countc=0;
-                 }
-                 countc++;
-                 for(int d=0;d<5;d++){
-                     if(countd==4){
-                         countd=0;
-                     }
-                     countd++;
-                     for(int e=0;e<5;e++){
-                         if(counte==4){
-                             counte=0;
-                         }
-                         //expression=v.at(counta)+bitOps.at(counta)+v.at(countb)+bitOps.at(countb)+v.at(countc)+bitOps.at(countc)+v.at(countd)+bitOps.at(countd)+v.at(counte)+bitOps.at(counte);
-                         counte++;
-                         comboCount++;
-                         //std::cout<<"Expressions: "<<expression;
-                     }
-                 }
-            }
-        }
+    count=all.size(); //count is the size
+    for(int q=0;q<count;q+=1){
+      v=all[q]; //setting v as temperory vector at iteration q
+      cout<<v[0]<<" "<<v[1]<<" "<<v[2]<<" "<<v[3]<<" "<<v[4]<<endl;
     }
-    std::cout<<"count: "<<comboCount<<endl;
-*/    
-//return "";
-    cout<<count<<endl;
     return "";
-
-    
 }
 
