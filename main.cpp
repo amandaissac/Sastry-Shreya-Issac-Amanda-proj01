@@ -35,11 +35,13 @@ int main(int argc, char * argv[]){
         }
     }
     
-    std::cout<<"total: "<< tot<<endl;
-    std::cout<<"operator: "<< operat<<endl;
-    for(unsigned int i=0;i< vals.size();i++){
+    //std::cout<<"total: "<< tot<<endl;
+    //std::cout<<"operator: "<< operat<<endl;
+    /*
+      for(unsigned int i=0;i< vals.size();i++){
         std::cout<<": "<< vals.at(i)<<endl;
     }
+    */
     int total=stoi(tot);
     bitwise(total,vals);
     

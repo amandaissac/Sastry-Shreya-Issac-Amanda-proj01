@@ -278,7 +278,8 @@ string bitwise(int total,vector<int>v){
 	      //cout<<"Operand 4: "<<ari<<endl;
 	      //all 4 operands have been found
 	      if(op4==total){
-		output.push_back("((("+to_string(v[0])+ari[0]+to_string(v[1])+")"+ari[1]+to_string(v[2])+")"+ari[2]+to_string(v[3])+")"+ari[3]+to_string(v[4]));
+		//output.push_back("((("+to_string(v[0])+ari[0]+to_string(v[1])+")"+ari[1]+to_string(v[2])+")"+ari[2]+to_string(v[3])+")"+ari[3]+to_string(v[4]));
+		cout<<"((("<<v[0]<<ari[0]<<v[1]<<")"<<ari[1]<<v[2]<<")"<<ari[2]<<v[3]<<")"<<ari[3]<<v[4]<<endl;
 		count+=1;
 		//cout<<"Ari: "<<ari<<endl;
 		/*
@@ -307,6 +308,8 @@ string bitwise(int total,vector<int>v){
     cout<<"Should be 120: "<<count<<endl;
     */
     //cout<<"Ari: "<<ari<<endl;
+    
+    /*
     if(count<10){
       for(int s=0;s<count;s++){
 	cout<<output[s]<<endl;
@@ -317,6 +320,7 @@ string bitwise(int total,vector<int>v){
 	cout<<output[s]<<endl;
       }
     }
+    */
     cout<<count<<" arithmetic expressions found that evaluate to "<<total<<endl;
     return "";
 }
