@@ -278,9 +278,11 @@ string bitwise(int total,vector<int>v){
 	      //all 4 operands have been found
 	      if(op4==total){
 		count+=1;
+
+        //cout<<"Ari: "<<ari<<endl;
 		if(count<10){
-		  //cout<<"Ari: "<<ari<<endl;
-		  cout<<"((("<<v[0]<<ari[0]<<v[1]<<")"<<ari[1]<<v[2]<<")"<<ari[2]<<v[3]<<")"<<ari[3]<<v[4]<<endl;
+            //cout<<"Ari: "<<ari<<endl;
+            cout<<"((("<<v[0]<<ari.at(0)<<v[1]<<")"<<ari.at(1)<<v[2]<<")"<<ari.at(2)<<v[3]<<")"<<ari.at(3)<<v[4]<<endl;
 		}
 	      }
 	    }//for a4
