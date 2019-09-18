@@ -24,7 +24,7 @@ vector<vector<int>>all; //a vector holding vector memory
 vector<vector<string>>alla; //vectoro holding all ari vectors
 vector<string>output; //holding all the output strings
 void secondNum(int a,int b,int c,int d,int e,int third,int z);
-string bitwise(int total,vector<int>v){
+string arithmetic(int total,vector<int>v){
     a=v[0];
     b=v[1];
     c=v[2];

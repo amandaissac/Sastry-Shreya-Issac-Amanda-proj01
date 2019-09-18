@@ -43,6 +43,6 @@ int main(int argc, char * argv[]){
     }
     */
     int total=stoi(tot);
-    bitwise(total,vals);
+    arithmetic(total,vals);
     
 }
