@@ -23,7 +23,7 @@ vector<int>vec={-1,-1,-1,-1,-1};
 vector<vector<int>>all; //a vector holding vector memory
 vector<string>output; //holding all the output strings
 void secondNum(int a,int b,int c,int d,int e,int third,int z);
-string bitwise(int total,vector<int>v){
+string arithmetic(int total,vector<int>v){
     a=v[0];
     b=v[1];
     c=v[2];
