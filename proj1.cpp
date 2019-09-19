@@ -23,8 +23,10 @@ vector<int>vec={-1,-1,-1,-1,-1};
 vector<vector<int>>all; //a vector holding vector memory
 vector<vector<string>>alla; //vectoro holding all ari vectors
 vector<string>output; //holding all the output strings
+vector<string> correctExp;
 void secondNum(int a,int b,int c,int d,int e,int third,int z);
 string arithmetic(int total,vector<int>v){
+    int op=0;
     a=v[0];
     b=v[1];
     c=v[2];
@@ -59,7 +61,29 @@ string arithmetic(int total,vector<int>v){
             vec[0]=e;
             noE=false;
         }
-	
+	//figuring first arithmetic
+	  for(int a1=0;a1<5;a1++){
+	    //setting first value of ari[0]
+	    if(a1==0){
+	      ari[0]="+";
+	      //op1=vec[0]+vec[1];
+	    }
+	    if(a1==1){
+	      ari[0]="-";
+	      //op1=vec[0]-vec[1];
+	    }
+	    if(a1==2){
+	      ari[0]="*";
+	      //op1=vec[0]*vec[1];
+	    }
+	    if((a1==3)&&(vec[1]!=0)){
+	      ari[0]="/";
+	      //op1=vec[0]/vec[1];
+	    }
+	    if((a1==4)&&(vec[1]!=0)){
+	      ari[0]="%";
+	      //op1=vec[0]%vec[1];
+	    }
 	//cout<<vec[0]<<endl;
 	//figuring out second space
 	for(int y=0;y<5;y+=1){
@@ -88,29 +112,28 @@ string arithmetic(int total,vector<int>v){
 	  else{
 	    second=false;
 	  }
-	  //figuring first arithmetic
-	  for(int a1=0;a1<5;a1++){
-	    //setting first value of ari[0]
-	    if(a1==0){
-	      ari[0]="+";
-	      op1=vec[0]+vec[1];
-	    }
-	    if(a1==1){
-	      ari[0]="-";
-	      op1=vec[0]-vec[1];
-	    }
-	    if(a1==2){
-	      ari[0]="*";
-	      op1=vec[0]*vec[1];
-	    }
-	    if((a1==3)&&(vec[1]!=0)){
-	      ari[0]="/";
-	      op1=vec[0]/vec[1];
-	    }
-	    if((a1==4)&&(vec[1]!=0)){
-	      ari[0]="%";
-	      op1=vec[0]%vec[1];
-	    }
+	  //second arithmetic
+		for(int a2=0;a2<5;a2++){
+		  if(a2==0){
+		    ari[1]="+";
+		    //op2=op1+vec[2];
+		  }
+		  if(a2==1){
+		    ari[1]="-";
+		    //op2=op1-vec[2];
+		  }
+		  if(a2==2){
+		    ari[1]="*";
+		    //op2=op1*vec[2];
+		  }
+		  if((a2==3)&&(vec[2]!=0)){
+		      ari[1]="/";
+		      //op2=op1/vec[2];
+		    }
+		  if((a2==4)&&(vec[2]!=0)){
+		    ari[1]="%";
+		    //op2=op1%vec[2];
+		  }  
 	    //after we have figured out the second one... within loop
 	    if(second){
 	      
@@ -137,28 +160,29 @@ string arithmetic(int total,vector<int>v){
 		else{
 		  third=false;
 		}
-		//second arithmetic
-		for(int a2=0;a2<5;a2++){
-		  if(a2==0){
-		    ari[1]="+";
-		    op2=op1+vec[2];
-		  }
-		  if(a2==1){
-		    ari[1]="-";
-		    op2=op1-vec[2];
-		  }
-		  if(a2==2){
-		    ari[1]="*";
-		    op2=op1*vec[2];
-		  }
-		  if((a2==3)&&(vec[2]!=0)){
-		      ari[1]="/";
-		      op2=op1/vec[2];
-		    }
-		  if((a2==4)&&(vec[2]!=0)){
-		    ari[1]="%";
-		    op2=op1%vec[2];
-		  }  
+		 //find third arithmetic
+		      //now setting the third operand (in total there is 4)
+		      for(int a3=0;a3<5;a3++){
+			if(a3==0){
+			  ari[2]="+";
+			  //op3=op2+vec[3];
+			}
+			if(a3==1){
+			  ari[2]="-";
+			  //op3=op2-vec[3];
+			}
+			if(a3==2){
+			  ari[2]="*";
+			  //op3=op2*vec[3];
+			}
+			if((a3==3)&&(vec[3]!=0)){
+			  ari[2]="/";
+			  //op3=op2/vec[3];
+			}
+			if((a3==4)&&(vec[3]!=0)){
+			  ari[2]="%";
+			  //op3=op2%vec[3];
+			}
 		  // secondNum(a,b,c,d,e,third,z);
 		  //going onto the fourth
 		  if(third){
@@ -184,29 +208,7 @@ string arithmetic(int total,vector<int>v){
 		      else{
 			fourth=false;
 		      }
-		      //find third arithmetic
-		      //now setting the third operand (in total there is 4)
-		      for(int a3=0;a3<5;a3++){
-			if(a3==0){
-			  ari[2]="+";
-			  op3=op2+vec[3];
-			}
-			if(a3==1){
-			  ari[2]="-";
-			  op3=op2-vec[3];
-			}
-			if(a3==2){
-			  ari[2]="*";
-			  op3=op2*vec[3];
-			}
-			if((a3==3)&&(vec[3]!=0)){
-			  ari[2]="/";
-			  op3=op2/vec[3];
-			}
-			if((a3==4)&&(vec[3]!=0)){
-			  ari[2]="%";
-			  op3=op2%vec[3];
-			}
+		     
 			//if the fourth one is found! Going to fifth!
 			if(fourth){
 			  //count+=1;
@@ -232,36 +234,62 @@ string arithmetic(int total,vector<int>v){
 			    else{
 			      fifth=false;
 			    }
-			    if(fifth){
-			      //all.push_back(vec);
-			      //find fourth arithmetic!
+                //find fourth arithmetic!
 			      //now looking for the 4th operand
 			      for(int a4=0;a4<5;a4++){
 				if(a4==0){
 				  ari[3]="+";
-				  op4=op3+vec[4];
+				  //op4=op3+vec[4];
 				}
 				if(a4==1){
 				  ari[3]="-";
-				  op4=op3-vec[4];
+				  //op4=op3-vec[4];
 				}
 				if(a4==2){
 				  ari[3]="*";
-				  op4=op3*vec[4];
+				  //op4=op3*vec[4];
 				}
 				if((a4==3)&&(vec[4]!=0)){
 				  ari[3]="/";
-				   op4=op3/vec[4];
+                  //op4=op3/vec[4];
 				}
 				if((a4==4)&&(vec[4]!=0)){
 				  ari[3]="%";
-				   op4=op3%vec[4];
+                  //op4=op3%vec[4];
 				}
+			    if(fifth){
+			      //all.push_back(vec);
+			      
 				//seeing if op4 is total
-				if(op4==total){
-				  cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
-				  count+=1;
+                    for(int r=0;r<4;r++){
+                        if(ari[r].compare("+")){
+                            op=op+vec[r]+vec[r+1];
+                        }
+                        if(ari[r].compare("-")){
+                            op=op-vec[r];
+                        }
+                        if(ari[r].compare("*")){
+                            op=op*vec[r];
+                        }
+                        if((ari[r].compare("/"))&&(vec[r]!=0)){
+                            op=op/vec[r];
+                        }
+                        if((ari[r].compare("%"))&&(vec[r]!=0)){
+                            op=op%vec[r];
+                        }
+                    }
+                    if(op==total){
+                    
+                    cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
+                    count+=1;
 				} //if op4 is total
+                /*
+                if(op4==total){
+                    
+                    cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
+                    count+=1;
+				} //if op4 is total
+                */
 			      }//fourth arithmetic
 			    }//if all values found
 			  }//if: going from fourth to fifth integer
