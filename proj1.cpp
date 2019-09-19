@@ -319,39 +319,10 @@ string arithmetic(int total,vector<int>v){
 				    if((ari[3].compare("%")==0)&&(vec[4]!=0)){
 				      op4=op3%vec[4];
 				    }
-				  
-				    /*
-				    //seeing if op4 is total
-				    for(int r=0;r<4;r++){
-				      if(ari[r].compare("+")){
-					op=op+vec[r]+vec[r+1];
-				      }
-				      if(ari[r].compare("-")){
-					op=op-vec[r];
-				      }
-				      if(ari[r].compare("*")){
-					op=op*vec[r];
-				      }
-				      if((ari[r].compare("/"))&&(vec[r]!=0)){
-					op=op/vec[r];
-				      }
-				      if((ari[r].compare("%"))&&(vec[r]!=0)){
-					op=op%vec[r];
-				      }
-				    }
-				    */
 				    if(op4==total){
-				      
 				      cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
 				      count+=1;
 				    } //if op4 is total
-				    /*
-				      if(op4==total){
-				      
-				      cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
-				      count+=1;
-				      } //if op4 is total
-				    */
 				  }//fourth arithmetic
 				}//if all values found
 			      }//if: going from fourth to fifth integer
@@ -372,7 +343,6 @@ string arithmetic(int total,vector<int>v){
 }
 string bitwise(int total,vector<int>v)
 {
-  cout<<"Doing bitwise"<<endl;
   //int op=0;
   a=v[0];
   b=v[1];
@@ -558,9 +528,6 @@ string bitwise(int total,vector<int>v)
 		      
 		      //if the fourth one is found! Going to fifth!
 		      if(fourth){
-			//count+=1;
-			//cout<<vec[0]<<" "<<vec[1]<<" "<<vec[2]<<" "<<vec[3]<<endl;
-			///*
 			for(int h=0;h<5;h+=1){
 			  fifth=true;
 			  if((h==0)&&(vec[0]!=a)&&(vec[1]!=a)&&(vec[2]!=a)&&(vec[3]!=a)){
@@ -666,39 +633,11 @@ string bitwise(int total,vector<int>v)
 			      if(ari[3].compare(">>")==0){
 				op4=op3>>vec[4];
 			      }
-			      
-			      /*
-			      //seeing if op4 is total
-			      for(int r=0;r<4;r++){
-			      if(ari[r].compare("+")){
-			      op=op+vec[r]+vec[r+1];
-			      }
-			      if(ari[r].compare("-")){
-			      op=op-vec[r];
-			      }
-			      if(ari[r].compare("*")){
-			      op=op*vec[r];
-			      }
-			      if((ari[r].compare("/"))&&(vec[r]!=0)){
-			      op=op/vec[r];
-			      }
-			      if((ari[r].compare("%"))&&(vec[r]!=0)){
-			      op=op%vec[r];
-			      }
-			      }
-			      */
 			      if(op4==total){
 				
 				cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
 				count+=1;
 			      } //if op4 is total
-			      /*
-				if(op4==total){
-				
-				cout<<"((("<<vec[0]<<ari[0]<<vec[1]<<")"<<ari[1]<<vec[2]<<")"<<ari[2]<<vec[3]<<")"<<ari[3]<<vec[4]<<endl;
-				count+=1;
-				} //if op4 is total
-			      */
 			    }//fourth arithmetic
 			  }//if all values found
 			}//if: going from fourth to fifth integer
