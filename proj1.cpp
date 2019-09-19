@@ -176,7 +176,7 @@ string arithmetic(int total,vector<int>v){
             }//if second
         }          
     }
-    
+    /*
     //bascially all the values of the number vector have been found
     //Need to find the arithmetic number vectors
     for(int a1=0;a1<5;a1++){
@@ -330,8 +330,8 @@ string arithmetic(int total,vector<int>v){
 	}
       }
     }//for: each arithmetic
-
-    /*
+*/
+    
     //we have the all vector carrying all number combinations
     for(int q=0;q<120;q+=1){
       v=all[q]; //setting s as temperary vector at iteration 
@@ -444,7 +444,7 @@ string arithmetic(int total,vector<int>v){
 	}
       }
     }//for: iterating through "all"
-    */
+    //*/
 
     cout<<count<<" arithmetic expressions found that evaluate to "<<total<<endl;
     return "";
