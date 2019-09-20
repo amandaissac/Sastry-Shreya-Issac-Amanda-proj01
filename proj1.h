@@ -6,6 +6,10 @@
 #include <string>
 #include <string.h>
 using namespace std;
+void calcBitwise2();
+void calcArith2();
+void fourthToTotal(int total);
+void fourthToTotalBit(int total);
 void calcArith();
 void calcBitwise();
 void findBitwise(int place,int iterator);
